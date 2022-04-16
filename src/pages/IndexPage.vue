@@ -14,12 +14,13 @@ export default defineComponent({
   setup() {
     const notes = useLocalNotes();
     const router = useRouter();
+    const progress = ref(1);
     return {
       router,
       notes,
       sharebox: ref(false),
       recievebox: ref(false),
-      progress: ref(1),
+      progress,
       recieveotp: ref(""),
     };
   },
@@ -49,7 +50,7 @@ export default defineComponent({
           document.getElementById("otp").innerHTML = response.data.data.otp;
 
           var countdown = 120;
-          var x = setInterval(function () {
+          var x = setInterval(() => {
             countdown = countdown - 1;
             this.progress = (countdown / 120).toFixed(2);
 
@@ -153,7 +154,6 @@ export default defineComponent({
           class="q-mt-md"
           width="100%"
           :value="progress"
-          :buffer="progress"
         />
       </q-card-section>
 
