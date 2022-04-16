@@ -54,8 +54,9 @@ export default defineComponent({
             countdown = countdown - 1;
             this.progress = (countdown / 120).toFixed(2);
 
-            if (countdown == 0) {
+            if (countdown == 0 || !this.sharebox) {
               clearInterval(x);
+              this.progress = 1;
             }
           }, 1000);
         })
