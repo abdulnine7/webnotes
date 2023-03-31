@@ -34,7 +34,7 @@ export default defineComponent({
 
       axios
         .post(
-          "https://a2mj.herokuapp.com/",
+          "https://2minutejson.com/",
           {
             json: window.btoa(JSON.stringify(this.notes[idx])),
           },
@@ -71,7 +71,7 @@ export default defineComponent({
       document.getElementById("recievebox-success").hidden = true;
 
       axios
-        .get("https://a2mj.herokuapp.com/json/?otp=" + recieveotp)
+        .get("https://2minutejson.com/json/?otp=" + recieveotp)
         .then((response) => {
           document.getElementById("recievebox-loading").hidden = true;
           document.getElementById("recievebox-success").hidden = false;

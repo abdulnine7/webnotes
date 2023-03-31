@@ -98,7 +98,7 @@ export default {
         >
         and
         <a
-          href="https://a2mj.herokuapp.com/"
+          href="https://2minutejson.com/"
           target="_blank"
           class="text-blue-9 link"
           >2Minute{JSON}</a
